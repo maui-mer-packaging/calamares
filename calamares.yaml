@@ -1,0 +1,55 @@
+Name         : calamares
+Version      : 0.1.0
+Release      : 1
+Group        : System/Base
+License      : GPLv3+
+Summary      : The distribution-independent installer framework
+Description  : |
+  The distribution-independent installer framework.
+URL          : https://github.com/calamares/calamares.git
+SetupOptions : -q -n %{name}-%{version}
+
+Sources:
+    - "%{name}-%{version}.tar.xz"
+    - settings.conf
+    - locale.conf
+
+Configure    : none
+Builder      : none
+
+PkgBR:
+    - kf5-rpm-macros
+    - extra-cmake-modules
+    - qt5-tools
+    - kcoreaddons-devel
+    - kconfig-devel
+    - solid-devel
+    - ki18n-devel
+    - libudisks2-devel
+    - boost-devel
+PkgConfigBR:
+    - Qt5Core
+    - Qt5DBus
+    - Qt5Xml
+    - Qt5Network
+    - Qt5Gui
+    - Qt5Widgets
+    - Qt5Test
+    - libatasmart
+Requires:
+    - kf5-filesystem
+    - parted
+    - udisks2
+
+Files:
+    - "%{_kf5_prefix}/*"
+
+SubPackages:
+    - Name: devel
+      Group: Development/Libraries
+      Summary: Development files for %{name}
+      Description: |
+        The %{name}-devel package contains the files necessary to develop applications
+        that use %{name}.
+      Files:
+          - "%{_kf5_libdir}/*.so"
