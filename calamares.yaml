@@ -27,6 +27,8 @@ PkgBR:
     - solid-devel
     - ki18n-devel
     - libudisks2-devel
+    - yaml-cpp-devel
+    - python3-devel
     - boost-devel
 PkgConfigBR:
     - Qt5Core

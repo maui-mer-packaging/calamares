@@ -38,6 +38,8 @@ BuildRequires:  kconfig-devel
 BuildRequires:  solid-devel
 BuildRequires:  ki18n-devel
 BuildRequires:  libudisks2-devel
+BuildRequires:  yaml-cpp-devel
+BuildRequires:  python3-devel
 BuildRequires:  boost-devel
 
 %description
