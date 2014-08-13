@@ -32,6 +32,7 @@ BuildRequires:  pkgconfig(libatasmart)
 BuildRequires:  kf5-rpm-macros
 BuildRequires:  extra-cmake-modules
 BuildRequires:  qt5-tools
+BuildRequires:  qt5-qttools-linguist
 BuildRequires:  kcoreaddons-devel
 BuildRequires:  kconfig-devel
 BuildRequires:  solid-devel

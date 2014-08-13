@@ -21,6 +21,7 @@ PkgBR:
     - kf5-rpm-macros
     - extra-cmake-modules
     - qt5-tools
+    - qt5-qttools-linguist
     - kcoreaddons-devel
     - kconfig-devel
     - solid-devel
