@@ -79,7 +79,7 @@ rm -rf %{buildroot}
 
 # >> install post
 install -D -m644 %{SOURCE2} %{buildroot}%{_sysconfdir}/calamares/modules/locale.conf
-sed 's|/path/to/squashfs/image.sqfs|/bootmnt/kdeos/x86_64/root-image.sqfs|' -i %{buildroot}%{_datadir}/calamares/modules/unsquashfs.conf
+sed 's|/path/to/squashfs/image.sqfs|/run/initramfs/live/LiveOS/squashfs.img|' -i %{buildroot}%{_datadir}/calamares/modules/unsquashfs.conf
 # << install post
 
 %files
