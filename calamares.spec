@@ -60,6 +60,9 @@ that use %{name}.
 %setup -q -n %{name}-%{version}
 
 # >> setup
+
+sed -i 's|PythonLibs 3.3|PythonLibs 3.4|g' CMakeLists.txt
+
 # << setup
 
 %build
