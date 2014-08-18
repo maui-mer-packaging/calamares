@@ -18,7 +18,6 @@ Source0:    %{name}-%{version}.tar.xz
 Source1:    settings.conf
 Source2:    locale.conf
 Source100:  calamares.yaml
-Requires:   kf5-filesystem
 Requires:   parted
 Requires:   udisks2
 BuildRequires:  pkgconfig(Qt5Core)
@@ -30,8 +29,6 @@ BuildRequires:  pkgconfig(Qt5Widgets)
 BuildRequires:  pkgconfig(Qt5Test)
 BuildRequires:  pkgconfig(libatasmart)
 BuildRequires:  cmake >= 3.0
-BuildRequires:  kf5-rpm-macros
-BuildRequires:  extra-cmake-modules
 BuildRequires:  qt5-tools
 BuildRequires:  qt5-qttools-linguist
 BuildRequires:  kcoreaddons-devel
@@ -89,12 +86,12 @@ sed 's|/path/to/squashfs/image.sqfs|/run/initramfs/live/LiveOS/squashfs.img|' -i
 
 %files
 %defattr(-,root,root,-)
-%{_kf5_prefix}/*
+%{_prefix}/*
 # >> files
 # << files
 
 %files devel
 %defattr(-,root,root,-)
-%{_kf5_libdir}/*.so
+%{_libdir}/*.so
 # >> files devel
 # << files devel

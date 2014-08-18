@@ -22,8 +22,6 @@ Builder      : make
 
 PkgBR:
     - cmake >= 3.0
-    - kf5-rpm-macros
-    - extra-cmake-modules
     - qt5-tools
     - qt5-qttools-linguist
     - kcoreaddons-devel
@@ -44,12 +42,11 @@ PkgConfigBR:
     - Qt5Test
     - libatasmart
 Requires:
-    - kf5-filesystem
     - parted
     - udisks2
 
 Files:
-    - "%{_kf5_prefix}/*"
+    - "%{_prefix}/*"
 
 SubPackages:
     - Name: devel
@@ -59,4 +56,4 @@ SubPackages:
         The %{name}-devel package contains the files necessary to develop applications
         that use %{name}.
       Files:
-          - "%{_kf5_libdir}/*.so"
+          - "%{_libdir}/*.so"
