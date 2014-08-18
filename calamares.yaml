@@ -33,7 +33,7 @@ PkgBR:
     - libudisks2-devel
     - yaml-cpp-devel
     - python3-devel
-    - boost-devel
+    - boost-devel >= 1.54.0
 PkgConfigBR:
     - Qt5Core
     - Qt5DBus

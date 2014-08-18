@@ -41,7 +41,7 @@ BuildRequires:  ki18n-devel
 BuildRequires:  libudisks2-devel
 BuildRequires:  yaml-cpp-devel
 BuildRequires:  python3-devel
-BuildRequires:  boost-devel
+BuildRequires:  boost-devel >= 1.54.0
 
 %description
 The distribution-independent installer framework.
