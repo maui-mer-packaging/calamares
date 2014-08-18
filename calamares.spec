@@ -29,6 +29,7 @@ BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Widgets)
 BuildRequires:  pkgconfig(Qt5Test)
 BuildRequires:  pkgconfig(libatasmart)
+BuildRequires:  cmake >= 3.0
 BuildRequires:  kf5-rpm-macros
 BuildRequires:  extra-cmake-modules
 BuildRequires:  qt5-tools
@@ -60,9 +61,6 @@ that use %{name}.
 %setup -q -n %{name}-%{version}
 
 # >> setup
-
-sed -i 's|PythonLibs 3.3|PythonLibs 3.4|g' CMakeLists.txt
-
 # << setup
 
 %build

@@ -21,6 +21,7 @@ ConfigOptions:
 Builder      : make
 
 PkgBR:
+    - cmake >= 3.0
     - kf5-rpm-macros
     - extra-cmake-modules
     - qt5-tools
