@@ -67,11 +67,13 @@ sed -i 's|PythonLibs 3.3|PythonLibs 3.4|g' CMakeLists.txt
 
 %build
 # >> build pre
-%cmake_kf5 -d build -- -DWITH_PARTITIONMANAGER=1
-%{__make} %{?_smp_mflags}
 # << build pre
 
+%cmake .  \
+    -DWITH_PARTITIONMANAGER=1 \
+    -DCMAKE_INSTALL_LIBDIR=%{_lib}
 
+make %{?_smp_mflags}
 
 # >> build post
 # << build post
@@ -79,8 +81,8 @@ sed -i 's|PythonLibs 3.3|PythonLibs 3.4|g' CMakeLists.txt
 %install
 rm -rf %{buildroot}
 # >> install pre
-%kf5_make_install
 # << install pre
+%make_install
 
 # >> install post
 install -D -m644 %{SOURCE2} %{buildroot}%{_sysconfdir}/calamares/modules/locale.conf

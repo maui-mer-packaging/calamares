@@ -14,8 +14,11 @@ Sources:
     - settings.conf
     - locale.conf
 
-Configure    : none
-Builder      : none
+Configure    : cmake
+ConfigOptions:
+    - -DWITH_PARTITIONMANAGER=1
+    - -DCMAKE_INSTALL_LIBDIR=%{_lib}
+Builder      : make
 
 PkgBR:
     - kf5-rpm-macros
