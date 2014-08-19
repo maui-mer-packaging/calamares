@@ -31,6 +31,7 @@ BuildRequires:  pkgconfig(Qt5Widgets)
 BuildRequires:  pkgconfig(Qt5Test)
 BuildRequires:  pkgconfig(libatasmart)
 BuildRequires:  pkgconfig(blkid)
+BuildRequires:  pkgconfig(libparted)
 BuildRequires:  cmake >= 3.0
 BuildRequires:  extra-cmake-modules
 BuildRequires:  qt5-tools
