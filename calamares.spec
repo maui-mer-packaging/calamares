@@ -15,9 +15,6 @@ Group:      System/Base
 License:    GPLv3+
 URL:        https://github.com/calamares/calamares.git
 Source0:    %{name}-%{version}.tar.xz
-Source1:    settings.conf
-Source2:    locale.conf
-Source3:    unpackfs.conf
 Source100:  calamares.yaml
 Requires:   parted
 Requires:   udisks2
@@ -87,9 +84,6 @@ rm -rf %{buildroot}
 %make_install
 
 # >> install post
-install -D -m644 %{SOURCE1} %{buildroot}%{_datadir}/calamares/settings.conf
-install -D -m644 %{SOURCE2} %{buildroot}%{_datadir}/calamares/modules/locale.conf
-install -D -m644 %{SOURCE3} %{buildroot}%{_datadir}/calamares/modules/unpackfs.conf
 # << install post
 
 %post -p /sbin/ldconfig
@@ -102,8 +96,11 @@ install -D -m644 %{SOURCE3} %{buildroot}%{_datadir}/calamares/modules/unpackfs.c
 %{_datadir}/calamares
 %{_libdir}/*.so.*
 %{_libdir}/libcalapm.so
+%dir %{_libdir}/calamares
 %{_libdir}/calamares/modules
-%{_datadir}/calamares
+%dir %{_datadir}/calamares
+%{_datadir}/calamares/settings.conf
+%{_datadir}/calamares/modules/*.conf
 # >> files
 # << files
 
