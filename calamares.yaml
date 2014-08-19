@@ -44,6 +44,7 @@ PkgConfigBR:
     - Qt5Widgets
     - Qt5Test
     - libatasmart
+    - blkid
 Requires:
     - parted
     - udisks2
