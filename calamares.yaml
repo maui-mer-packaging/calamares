@@ -20,8 +20,11 @@ ConfigOptions:
     - -DCMAKE_INSTALL_LIBDIR=%{_lib}
 Builder      : make
 
+# e-c-m is needed by the partition manager
+
 PkgBR:
     - cmake >= 3.0
+    - extra-cmake-modules
     - qt5-tools
     - qt5-qttools-linguist
     - kcoreaddons-devel
