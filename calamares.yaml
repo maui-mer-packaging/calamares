@@ -13,6 +13,7 @@ Sources:
     - "%{name}-%{version}.tar.xz"
     - settings.conf
     - locale.conf
+    - unpackfs.conf
 
 Configure    : cmake
 ConfigOptions:
@@ -56,6 +57,7 @@ Files:
     - "%{_datadir}/calamares"
     - "%{_libdir}/*.so.*"
     - "%{_libdir}/calamares/modules"
+    - "%{_datadir}/calamares"
 
 SubPackages:
     - Name: devel

@@ -17,6 +17,7 @@ URL:        https://github.com/calamares/calamares.git
 Source0:    %{name}-%{version}.tar.xz
 Source1:    settings.conf
 Source2:    locale.conf
+Source3:    unpackfs.conf
 Source100:  calamares.yaml
 Requires:   parted
 Requires:   udisks2
@@ -86,8 +87,9 @@ rm -rf %{buildroot}
 %make_install
 
 # >> install post
-install -D -m644 %{SOURCE2} %{buildroot}%{_sysconfdir}/calamares/modules/locale.conf
-sed 's|/path/to/squashfs/image.sqfs|/run/initramfs/live/LiveOS/squashfs.img|' -i %{buildroot}%{_datadir}/calamares/modules/unsquashfs.conf
+install -D -m644 %{SOURCE1} %{buildroot}%{_datadir}/calamares/settings.conf
+install -D -m644 %{SOURCE2} %{buildroot}%{_datadir}/calamares/modules/locale.conf
+install -D -m644 %{SOURCE3} %{buildroot}%{_datadir}/calamares/modules/unpackfs.conf
 # << install post
 
 %post -p /sbin/ldconfig
@@ -100,6 +102,7 @@ sed 's|/path/to/squashfs/image.sqfs|/run/initramfs/live/LiveOS/squashfs.img|' -i
 %{_datadir}/calamares
 %{_libdir}/*.so.*
 %{_libdir}/calamares/modules
+%{_datadir}/calamares
 # >> files
 # << files
 
