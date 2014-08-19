@@ -43,6 +43,7 @@ PkgConfigBR:
     - Qt5Gui
     - Qt5Widgets
     - Qt5Test
+    - Qt5Concurrent
     - libatasmart
     - blkid
     - libparted
