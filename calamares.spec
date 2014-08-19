@@ -71,7 +71,7 @@ that use %{name}.
 
 %cmake .  \
     -DWITH_PARTITIONMANAGER=1 \
-    -DCMAKE_INSTALL_LIBDIR=%{_lib}
+    -DCMAKE_INSTALL_LIBDIR=%{_libdir}
 
 make %{?_smp_mflags}
 

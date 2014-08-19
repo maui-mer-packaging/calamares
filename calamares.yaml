@@ -17,7 +17,7 @@ Sources:
 Configure    : cmake
 ConfigOptions:
     - -DWITH_PARTITIONMANAGER=1
-    - -DCMAKE_INSTALL_LIBDIR=%{_lib}
+    - -DCMAKE_INSTALL_LIBDIR=%{_libdir}
 Builder      : make
 
 # e-c-m is needed by the partition manager
