@@ -101,6 +101,7 @@ install -D -m644 %{SOURCE3} %{buildroot}%{_datadir}/calamares/modules/unpackfs.c
 %{_bindir}/calamares
 %{_datadir}/calamares
 %{_libdir}/*.so.*
+%{_libdir}/libcalapm.so
 %{_libdir}/calamares/modules
 %{_datadir}/calamares
 # >> files
@@ -109,6 +110,7 @@ install -D -m644 %{SOURCE3} %{buildroot}%{_datadir}/calamares/modules/unpackfs.c
 %files devel
 %defattr(-,root,root,-)
 %{_libdir}/*.so
+%exclude %{_libdir}/libcalapm.so
 %{_libdir}/calamares/*.so
 %{_libdir}/cmake/Calamares
 %{_includedir}/libcalamares
