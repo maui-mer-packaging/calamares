@@ -20,6 +20,8 @@ Source2:    locale.conf
 Source100:  calamares.yaml
 Requires:   parted
 Requires:   udisks2
+Requires(post): /sbin/ldconfig
+Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5DBus)
 BuildRequires:  pkgconfig(Qt5Xml)
@@ -84,14 +86,24 @@ install -D -m644 %{SOURCE2} %{buildroot}%{_sysconfdir}/calamares/modules/locale.
 sed 's|/path/to/squashfs/image.sqfs|/run/initramfs/live/LiveOS/squashfs.img|' -i %{buildroot}%{_datadir}/calamares/modules/unsquashfs.conf
 # << install post
 
+%post -p /sbin/ldconfig
+
+%postun -p /sbin/ldconfig
+
 %files
 %defattr(-,root,root,-)
-%{_prefix}/*
+%{_bindir}/calamares
+%{_datadir}/calamares
+%{_libdir}/*.so.*
+%{_libdir}/calamares/modules
 # >> files
 # << files
 
 %files devel
 %defattr(-,root,root,-)
 %{_libdir}/*.so
+%{_libdir}/calamares/*.so
+%{_libdir}/cmake/Calamares
+%{_includedir}/libcalamares
 # >> files devel
 # << files devel
