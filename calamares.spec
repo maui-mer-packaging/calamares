@@ -92,14 +92,14 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
+%dir %{_libdir}/calamares
+%dir %{_datadir}/calamares
 %{_bindir}/calamares
 %{_datadir}/calamares
 %{_libdir}/*.so.*
-%{_libdir}/libcalapm.so
-%dir %{_libdir}/calamares
-%{_libdir}/calamares/libcalamares.so
+%{_libdir}/*.so
+%{_libdir}/calamares/*.so
 %{_libdir}/calamares/modules
-%dir %{_datadir}/calamares
 %{_datadir}/calamares/settings.conf
 %{_datadir}/calamares/modules/*.conf
 # >> files
@@ -107,10 +107,6 @@ rm -rf %{buildroot}
 
 %files devel
 %defattr(-,root,root,-)
-%{_libdir}/*.so
-%exclude %{_libdir}/libcalapm.so
-%{_libdir}/calamares/*.so
-%exclude %{_libdir}/calamares/libcalamares.so
 %{_libdir}/cmake/Calamares
 %{_includedir}/libcalamares
 # >> files devel
