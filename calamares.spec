@@ -97,6 +97,7 @@ rm -rf %{buildroot}
 %{_libdir}/*.so.*
 %{_libdir}/libcalapm.so
 %dir %{_libdir}/calamares
+%{_libdir}/calamares/libcalamares.so
 %{_libdir}/calamares/modules
 %dir %{_datadir}/calamares
 %{_datadir}/calamares/settings.conf
@@ -109,6 +110,7 @@ rm -rf %{buildroot}
 %{_libdir}/*.so
 %exclude %{_libdir}/libcalapm.so
 %{_libdir}/calamares/*.so
+%exclude %{_libdir}/calamares/libcalamares.so
 %{_libdir}/cmake/Calamares
 %{_includedir}/libcalamares
 # >> files devel
