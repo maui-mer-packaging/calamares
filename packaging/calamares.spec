@@ -9,7 +9,7 @@ Name:       calamares
 # << macros
 
 Summary:    The distribution-independent installer framework
-Version:    0.1.0
+Version:    0.1.0+git0
 Release:    1
 Group:      System/Base
 License:    GPLv3+
